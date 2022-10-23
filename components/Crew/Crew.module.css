@@ -1,0 +1,160 @@
+.crew-bg {
+	background-image: url('../../public/assets/crew/background-crew-mobile.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+}
+
+.crew {
+	color: var(--white);
+}
+
+.img {
+	display: flex;
+	margin: 32px auto 0;
+	height: 223px;
+	/*outline: 1px solid white;*/
+}
+
+.img-stripe {
+	content: '';
+	display: block;
+	width: 327px;
+	margin: auto;
+	border-bottom: 1px solid #383B4B;
+}
+
+.dots-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-block: 32px;
+	gap: 16px;
+}
+.dot {
+	border-radius: 50%;
+	height: 10px;
+	width: 10px;
+	background-color: var(--white);
+	opacity: .17;
+}
+.dot:hover {
+	opacity: .5;
+	cursor: pointer;
+}
+.dot.active {
+	opacity: 1;
+}
+
+.member-wrapper {
+	text-align: center;
+	color: var(--white);
+}
+
+.member-role {
+	opacity: .5;
+	text-transform: uppercase;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: var(--fontAlt);
+	margin-block: 0;
+}
+
+.member-name {
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 28px;
+	font-family: var(--fontAlt);
+	margin-block: 8px 16px;
+}
+
+.member-bio {
+	color: var(--astral);
+	font-family: var(--fontMain2);
+	font-size: 15px;
+	line-height: 25px;
+	margin-block: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.crew-bg {
+		background-image: url('../../public/assets/crew/background-crew-tablet.jpg');
+	}
+	.crew {
+		display: flex;
+		flex-direction: column;
+	}
+	.img {
+		height: 532px;
+		order: 3;
+		margin-bottom: -5rem;
+	}
+	.img-stripe {
+		display: none;
+	}
+	.dots-wrapper {
+		order: 2;
+	}
+	.member-wrapper {
+		order: 1;
+		margin-top: 60px;
+	}
+	.member-role {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	.member-name {
+		font-size: 40px;
+		line-height: 46px;
+	}
+	.member-bio {
+		font-size: 16px;
+		line-height: 28px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.crew-bg {
+		background-image: url('../../public/assets/crew/background-crew-desktop.jpg');
+	}
+	.crew {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 3fr 1fr;
+		gap: 0;
+	}
+	.img {
+		grid-area: 1 / 3 / 4 / 5;
+		margin: unset;
+		position: absolute;
+		bottom: 0;
+		left: 70%;
+		transform: translate(-60%);
+	}
+	.dots-wrapper {
+		grid-area: 3 / 1 / 4 / 3;
+		justify-content: inherit;
+		align-self: end;
+		margin-block: 0;
+	}
+	.member-wrapper {
+		grid-area: 2 / 1 / 3 / 3;
+		text-align: left;
+	}
+	.member-role {
+		font-size: 32px;
+		line-height: 37px;
+	}
+	.member-name {
+		font-size: 56px;
+		line-height: 64px;
+		margin-block: 15px 27px;
+	}
+	.member-bio {
+		font-size: 18px;
+		line-height: 32px;
+		max-width: 444px;
+	}
+}
